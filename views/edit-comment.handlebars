@@ -1,0 +1,15 @@
+<article>
+    <a href="/dashboard"> Dashboard</a>
+    <h2>Edit Comment</h2>
+    <form class="edit-comment">
+        <div>
+            <input class="comment-body" name="comment-body" type="text" value="{{post.comment_text}}" />
+        </div>
+
+        <button class="btn edit-comment-btn" type="submit">Save</button>
+        <button class="btn delete-comment-btn" type="button">Delete</button>
+    </form>
+</article>
+
+<script src="/public/delete-comment.js"></script>
+<script src="/public/edit-comment.js"></script>
