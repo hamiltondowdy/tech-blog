@@ -6,7 +6,7 @@ const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
 const hbs = exphbs.create({ helpers });
 const app = express();
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3001;
 const session = require('express-session');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -32,10 +32,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use(routes);
-app.use(function(req,res){
-  res.status(404);
-  res.render("404");
-});
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
